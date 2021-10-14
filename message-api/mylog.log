@@ -1,0 +1,418 @@
+2021-10-14 11:45:44.198  INFO 11104 --- [main] v.v.messageapi.MessageApiApplication     : Starting MessageApiApplication using Java 16.0.2 on DESKTOP-VBCFQPR with PID 11104 (F:\VNPAY\message-api\target\classes started by Binnie in F:\VNPAY\message-api)
+2021-10-14 11:45:44.243  INFO 11104 --- [main] v.v.messageapi.MessageApiApplication     : No active profile set, falling back to default profiles: default
+2021-10-14 11:45:46.850  INFO 11104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-10-14 11:45:46.885  INFO 11104 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-14 11:45:46.886  INFO 11104 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-14 11:45:47.343  INFO 11104 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-14 11:45:47.346  INFO 11104 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2982 ms
+2021-10-14 11:45:47.598  WARN 11104 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'channelFactory': Unsatisfied dependency expressed through field 'connection'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.rabbitmq.client.Connection' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true), @org.springframework.beans.factory.annotation.Qualifier("conn")}
+2021-10-14 11:45:47.605  INFO 11104 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-10-14 11:45:47.638  INFO 11104 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-14 11:45:47.705 ERROR 11104 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field connection in vn.vnpay.messageapi.config.ChannelFactory required a bean of type 'com.rabbitmq.client.Connection' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+	- @org.springframework.beans.factory.annotation.Qualifier("conn")
+
+The following candidates were found but could not be injected:
+	- User-defined bean method 'getConnection' in 'ConnectionPool' ignored as the bean value is null
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'com.rabbitmq.client.Connection' in your configuration.
+
+2021-10-14 12:05:26.081  INFO 13268 --- [main] v.v.messageapi.MessageApiApplication     : Starting MessageApiApplication using Java 16.0.2 on DESKTOP-VBCFQPR with PID 13268 (F:\VNPAY\message-api\target\classes started by Binnie in F:\VNPAY\message-api)
+2021-10-14 12:05:26.123  INFO 13268 --- [main] v.v.messageapi.MessageApiApplication     : No active profile set, falling back to default profiles: default
+2021-10-14 12:05:28.776  INFO 13268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-10-14 12:05:28.796  INFO 13268 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-14 12:05:28.797  INFO 13268 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-14 12:05:29.051  INFO 13268 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-14 12:05:29.051  INFO 13268 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2797 ms
+2021-10-14 12:05:31.063  INFO 13268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-10-14 12:05:31.080  INFO 13268 --- [main] v.v.messageapi.MessageApiApplication     : Started MessageApiApplication in 6.363 seconds (JVM running for 11.655)
+2021-10-14 12:09:00.996  INFO 13268 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-14 12:09:01.014  INFO 13268 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-14 12:09:01.142  INFO 13268 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 125 ms
+2021-10-14 12:09:01.560  INFO 13268 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 12:09:03.410  INFO 13268 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Message: test send  | requestID: A1 | count: 1
+2021-10-14 12:09:03.415  INFO 13268 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Response: ResponseDto(requestId=A1, messageResponse=Send message: test send  successfully, dateExpired=null)
+2021-10-14 12:09:03.416  INFO 13268 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========END========
+2021-10-14 12:12:30.352  INFO 13268 --- [pool-1-thread-3] v.v.m.s.ProducerAndConsumerService       : token: 1b3c8209-5880-40d5-a546-f1b08e02df4a
+2021-10-14 12:12:30.484  INFO 13268 --- [pool-1-thread-3] v.v.m.s.ProducerAndConsumerService       : hset: {}
+2021-10-14 12:12:30.486  INFO 13268 --- [pool-1-thread-3] v.v.m.s.ProducerAndConsumerService       : get ttl: 1634188743514
+2021-10-14 12:13:23.434  INFO 13268 --- [http-nio-8081-exec-6] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 12:13:23.435  INFO 13268 --- [http-nio-8081-exec-6] v.v.m.s.ProducerAndConsumerService       : request: RequestDto(requestId=A12)
+2021-10-14 12:13:23.436  INFO 13268 --- [http-nio-8081-exec-6] v.v.m.s.ProducerAndConsumerService       : map queue b check is empty: true
+2021-10-14 15:21:25.048  INFO 19116 --- [main] v.v.messageapi.MessageApiApplication     : Starting MessageApiApplication using Java 16.0.2 on DESKTOP-VBCFQPR with PID 19116 (F:\VNPAY\message-api\target\classes started by Binnie in F:\VNPAY\message-api)
+2021-10-14 15:21:25.055  INFO 19116 --- [main] v.v.messageapi.MessageApiApplication     : No active profile set, falling back to default profiles: default
+2021-10-14 15:21:28.407  INFO 19116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-10-14 15:21:28.450  INFO 19116 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-14 15:21:28.451  INFO 19116 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-14 15:21:28.846  INFO 19116 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-14 15:21:28.847  INFO 19116 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3654 ms
+2021-10-14 15:21:30.660  INFO 19116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-10-14 15:21:30.684  INFO 19116 --- [main] v.v.messageapi.MessageApiApplication     : Started MessageApiApplication in 6.562 seconds (JVM running for 10.183)
+2021-10-14 15:22:11.568  INFO 19116 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-14 15:22:11.569  INFO 19116 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-14 15:22:11.570  INFO 19116 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-10-14 15:22:11.761  INFO 19116 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 15:22:11.794  INFO 19116 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Message: test send  | requestID: A1 | count: 1
+2021-10-14 15:22:11.798  INFO 19116 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Response: ResponseDto(requestId=A1, messageResponse=Send message: test send  successfully, dateExpired=null)
+2021-10-14 15:22:11.798  INFO 19116 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========END========
+2021-10-14 15:22:16.312  INFO 19116 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : token: d87c5bd3-4c98-4bb1-b36b-9d67659f8f8b
+2021-10-14 15:22:16.427 ERROR 19116 --- [pool-1-thread-4] c.r.c.impl.ForgivingExceptionHandler     : Consumer vn.vnpay.messageapi.service.ProducerAndConsumerService$1@316f0d65 (amq.ctag-7W9aKvMrKyQ0NLh46TfPlw) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+redis.clients.jedis.exceptions.JedisDataException: WRONGTYPE Operation against a key holding the wrong kind of value
+	at redis.clients.jedis.Protocol.processError(Protocol.java:139) ~[jedis-3.7.0.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:173) ~[jedis-3.7.0.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:227) ~[jedis-3.7.0.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:352) ~[jedis-3.7.0.jar:na]
+	at redis.clients.jedis.Connection.getBinaryMultiBulkReply(Connection.java:304) ~[jedis-3.7.0.jar:na]
+	at redis.clients.jedis.Jedis.hgetAll(Jedis.java:1040) ~[jedis-3.7.0.jar:na]
+	at vn.vnpay.messageapi.service.ProducerAndConsumerService$1.handleDelivery(ProducerAndConsumerService.java:103) ~[classes/:na]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:104) ~[amqp-client-5.12.0.jar:5.12.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+
+2021-10-14 16:12:31.188  INFO 19668 --- [main] v.v.messageapi.MessageApiApplication     : Starting MessageApiApplication using Java 16.0.2 on DESKTOP-VBCFQPR with PID 19668 (F:\VNPAY\message-api\target\classes started by Binnie in F:\VNPAY\message-api)
+2021-10-14 16:12:31.194  INFO 19668 --- [main] v.v.messageapi.MessageApiApplication     : No active profile set, falling back to default profiles: default
+2021-10-14 16:12:33.875  INFO 19668 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-10-14 16:12:33.899  INFO 19668 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-14 16:12:33.900  INFO 19668 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-14 16:12:34.157  INFO 19668 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-14 16:12:34.157  INFO 19668 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2834 ms
+2021-10-14 16:12:35.740  INFO 19668 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-10-14 16:12:35.756  INFO 19668 --- [main] v.v.messageapi.MessageApiApplication     : Started MessageApiApplication in 5.461 seconds (JVM running for 8.785)
+2021-10-14 16:13:14.308  INFO 19668 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-14 16:13:14.309  INFO 19668 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-14 16:13:14.312  INFO 19668 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-10-14 16:13:14.540  INFO 19668 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:13:14.579  INFO 19668 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Message: test send  | requestID: A2 | count: 1
+2021-10-14 16:13:14.586  INFO 19668 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Response: ResponseDto(requestId=A2, messageResponse=Send message: test send  successfully, dateExpired=null)
+2021-10-14 16:13:14.587  INFO 19668 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========END========
+2021-10-14 16:13:18.338  INFO 19668 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : token: 7676fb9b-4f4b-47f4-bfbc-d4c358bb3a7f
+2021-10-14 16:13:18.365 ERROR 19668 --- [pool-1-thread-4] c.r.c.impl.ForgivingExceptionHandler     : Consumer vn.vnpay.messageapi.service.ProducerAndConsumerService$1@74c0a871 (amq.ctag-EbJbqqUH29UmXiX8gX1uyg) method handleDelivery for channel AMQChannel(amqp://guest@0:0:0:0:0:0:0:1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@0:0:0:0:0:0:0:1:5672/,1)
+
+redis.clients.jedis.exceptions.JedisDataException: WRONGTYPE Operation against a key holding the wrong kind of value
+	at redis.clients.jedis.Protocol.processError(Protocol.java:139) ~[jedis-3.7.0.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:173) ~[jedis-3.7.0.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:227) ~[jedis-3.7.0.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:352) ~[jedis-3.7.0.jar:na]
+	at redis.clients.jedis.Connection.getStatusCodeReply(Connection.java:270) ~[jedis-3.7.0.jar:na]
+	at redis.clients.jedis.Jedis.hmset(Jedis.java:890) ~[jedis-3.7.0.jar:na]
+	at vn.vnpay.messageapi.service.ProducerAndConsumerService$1.handleDelivery(ProducerAndConsumerService.java:98) ~[classes/:na]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:104) ~[amqp-client-5.12.0.jar:5.12.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+
+2021-10-14 16:19:33.529  INFO 17584 --- [main] v.v.messageapi.MessageApiApplication     : Starting MessageApiApplication using Java 16.0.2 on DESKTOP-VBCFQPR with PID 17584 (F:\VNPAY\message-api\target\classes started by Binnie in F:\VNPAY\message-api)
+2021-10-14 16:19:33.625  INFO 17584 --- [main] v.v.messageapi.MessageApiApplication     : No active profile set, falling back to default profiles: default
+2021-10-14 16:19:35.872  INFO 17584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-10-14 16:19:35.887  INFO 17584 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-14 16:19:35.888  INFO 17584 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-14 16:19:36.150  INFO 17584 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-14 16:19:36.150  INFO 17584 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2424 ms
+2021-10-14 16:19:37.412  INFO 17584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-10-14 16:19:37.426  INFO 17584 --- [main] v.v.messageapi.MessageApiApplication     : Started MessageApiApplication in 5.434 seconds (JVM running for 10.447)
+2021-10-14 16:23:43.912  INFO 17584 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-14 16:23:45.609  INFO 17584 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-14 16:23:45.665  INFO 17584 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 55 ms
+2021-10-14 16:23:46.001  INFO 17584 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:23:46.258  INFO 17584 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Message: test send  | requestID: A2 | count: 1
+2021-10-14 16:23:46.264  INFO 17584 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Response: ResponseDto(requestId=A2, messageResponse=Send message: test send  successfully, dateExpired=null)
+2021-10-14 16:23:46.265  INFO 17584 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========END========
+2021-10-14 16:23:50.065  INFO 17584 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : token: 38d95ea4-3384-4072-a055-4f7ed93e9aec
+2021-10-14 16:23:50.087  INFO 17584 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : set: publish to queue B success
+2021-10-14 16:23:50.088  INFO 17584 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : get ttl: 1634204026420
+2021-10-14 16:24:06.363  INFO 17584 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:24:06.366  INFO 17584 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : request: RequestDto(requestId=A2)
+2021-10-14 16:24:06.367  INFO 17584 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : get ttl: 1634204026404
+2021-10-14 16:24:06.380  INFO 17584 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : convert date: 12-11-53755 17:53:24
+2021-10-14 16:24:06.381  INFO 17584 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : Response: ResponseDto(requestId=A2, messageResponse=publish to queue B success, dateExpired=12-11-53755 17:53:24)
+2021-10-14 16:24:06.382  INFO 17584 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : ========END========
+2021-10-14 16:24:42.740  INFO 17584 --- [http-nio-8081-exec-5] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:24:42.743  INFO 17584 --- [http-nio-8081-exec-5] v.v.m.s.ProducerAndConsumerService       : request: RequestDto(requestId=A1)
+2021-10-14 16:24:42.745  INFO 17584 --- [http-nio-8081-exec-5] v.v.m.s.ProducerAndConsumerService       : get ttl: 1634200328804
+2021-10-14 16:24:42.746  INFO 17584 --- [http-nio-8081-exec-5] v.v.m.s.ProducerAndConsumerService       : convert date: 30-09-53755 22:46:44
+2021-10-14 16:24:42.747  INFO 17584 --- [http-nio-8081-exec-5] v.v.m.s.ProducerAndConsumerService       : Response: ResponseDto(requestId=A1, messageResponse=publish to queue B success, dateExpired=30-09-53755 22:46:44)
+2021-10-14 16:24:42.747  INFO 17584 --- [http-nio-8081-exec-5] v.v.m.s.ProducerAndConsumerService       : ========END========
+2021-10-14 16:24:50.096  INFO 17584 --- [http-nio-8081-exec-6] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:24:50.097  INFO 17584 --- [http-nio-8081-exec-6] v.v.m.s.ProducerAndConsumerService       : request: RequestDto(requestId=A2)
+2021-10-14 16:24:50.098  INFO 17584 --- [http-nio-8081-exec-6] v.v.m.s.ProducerAndConsumerService       : get ttl: 1634204026360
+2021-10-14 16:24:50.098  INFO 17584 --- [http-nio-8081-exec-6] v.v.m.s.ProducerAndConsumerService       : convert date: 12-11-53755 17:52:40
+2021-10-14 16:24:50.098  INFO 17584 --- [http-nio-8081-exec-6] v.v.m.s.ProducerAndConsumerService       : Response: ResponseDto(requestId=A2, messageResponse=publish to queue B success, dateExpired=12-11-53755 17:52:40)
+2021-10-14 16:24:50.098  INFO 17584 --- [http-nio-8081-exec-6] v.v.m.s.ProducerAndConsumerService       : ========END========
+2021-10-14 16:26:09.880  INFO 11548 --- [main] v.v.messageapi.MessageApiApplication     : Starting MessageApiApplication using Java 16.0.2 on DESKTOP-VBCFQPR with PID 11548 (F:\VNPAY\message-api\target\classes started by Binnie in F:\VNPAY\message-api)
+2021-10-14 16:26:09.885  INFO 11548 --- [main] v.v.messageapi.MessageApiApplication     : No active profile set, falling back to default profiles: default
+2021-10-14 16:26:11.662  INFO 11548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-10-14 16:26:11.675  INFO 11548 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-14 16:26:11.676  INFO 11548 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-14 16:26:11.841  INFO 11548 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-14 16:26:11.842  INFO 11548 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1834 ms
+2021-10-14 16:26:12.837  INFO 11548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-10-14 16:26:12.850  INFO 11548 --- [main] v.v.messageapi.MessageApiApplication     : Started MessageApiApplication in 4.207 seconds (JVM running for 6.287)
+2021-10-14 16:26:54.069  INFO 11548 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-14 16:26:54.070  INFO 11548 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-14 16:26:54.071  INFO 11548 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-10-14 16:26:54.182  INFO 11548 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:26:54.204  INFO 11548 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Message: test send  | requestID: A1 | count: 1
+2021-10-14 16:26:54.206  INFO 11548 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Response: ResponseDto(requestId=A1, messageResponse=Send message: test send  successfully, dateExpired=null)
+2021-10-14 16:26:54.206  INFO 11548 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========END========
+2021-10-14 16:26:57.852  INFO 11548 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : token: 0148fd3d-bcb7-4661-8877-8a5e6780dec1
+2021-10-14 16:26:57.858  INFO 11548 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : set: publish to queue B success
+2021-10-14 16:26:57.860  INFO 11548 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : get ttl: 1634204214387
+2021-10-14 16:27:04.984  INFO 11548 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:27:04.985  INFO 11548 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : request: RequestDto(requestId=A2)
+2021-10-14 16:27:04.994 ERROR 11548 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : Error: 
+
+java.lang.NullPointerException: Cannot invoke "String.isEmpty()" because "getSet" is null
+	at vn.vnpay.messageapi.service.ProducerAndConsumerService.checkMessageV2(ProducerAndConsumerService.java:154) ~[classes/:na]
+	at vn.vnpay.messageapi.controller.ProducerAndConsumerController.checkMessageV2(ProducerAndConsumerController.java:37) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+
+2021-10-14 16:28:59.953  INFO 7424 --- [main] v.v.messageapi.MessageApiApplication     : Starting MessageApiApplication using Java 16.0.2 on DESKTOP-VBCFQPR with PID 7424 (F:\VNPAY\message-api\target\classes started by Binnie in F:\VNPAY\message-api)
+2021-10-14 16:28:59.958  INFO 7424 --- [main] v.v.messageapi.MessageApiApplication     : No active profile set, falling back to default profiles: default
+2021-10-14 16:29:02.192  INFO 7424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-10-14 16:29:02.206  INFO 7424 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-14 16:29:02.206  INFO 7424 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-14 16:29:02.428  INFO 7424 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-14 16:29:02.428  INFO 7424 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2373 ms
+2021-10-14 16:29:04.492  INFO 7424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-10-14 16:29:04.516  INFO 7424 --- [main] v.v.messageapi.MessageApiApplication     : Started MessageApiApplication in 5.306 seconds (JVM running for 7.867)
+2021-10-14 16:30:50.434  INFO 7424 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-14 16:30:50.435  INFO 7424 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-14 16:30:50.437  INFO 7424 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-10-14 16:30:50.586  INFO 7424 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:30:50.644  INFO 7424 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Message: test send  | requestID: A1 | count: 1
+2021-10-14 16:30:50.650  INFO 7424 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Response: ResponseDto(requestId=A1, messageResponse=Send message: test send  successfully, dateExpired=null)
+2021-10-14 16:30:50.677  INFO 7424 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========END========
+2021-10-14 16:30:53.848  INFO 7424 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : token: 5138a38f-195c-402e-9bf5-9b8b2566e71e
+2021-10-14 16:30:53.856  INFO 7424 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : set: publish to queue B success
+2021-10-14 16:30:53.857  INFO 7424 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : get ttl: 1634204450959
+2021-10-14 16:30:57.154  INFO 7424 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:30:57.155  INFO 7424 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : request: RequestDto(requestId=A2)
+2021-10-14 16:30:57.166 ERROR 7424 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : Error: 
+
+java.lang.NullPointerException: Cannot invoke "String.isEmpty()" because "getSet" is null
+	at vn.vnpay.messageapi.service.ProducerAndConsumerService.checkMessageV2(ProducerAndConsumerService.java:154) ~[classes/:na]
+	at vn.vnpay.messageapi.controller.ProducerAndConsumerController.checkMessageV2(ProducerAndConsumerController.java:37) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+
+2021-10-14 16:31:51.374  INFO 15948 --- [main] v.v.messageapi.MessageApiApplication     : Starting MessageApiApplication using Java 16.0.2 on DESKTOP-VBCFQPR with PID 15948 (F:\VNPAY\message-api\target\classes started by Binnie in F:\VNPAY\message-api)
+2021-10-14 16:31:51.379  INFO 15948 --- [main] v.v.messageapi.MessageApiApplication     : No active profile set, falling back to default profiles: default
+2021-10-14 16:31:52.686  INFO 15948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-10-14 16:31:52.700  INFO 15948 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-14 16:31:52.700  INFO 15948 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-14 16:31:52.863  INFO 15948 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-14 16:31:52.863  INFO 15948 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1413 ms
+2021-10-14 16:31:53.802  INFO 15948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-10-14 16:31:53.815  INFO 15948 --- [main] v.v.messageapi.MessageApiApplication     : Started MessageApiApplication in 3.184 seconds (JVM running for 4.707)
+2021-10-14 16:34:32.154  INFO 15948 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-14 16:34:32.155  INFO 15948 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-14 16:34:32.160  INFO 15948 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-10-14 16:34:32.474  INFO 15948 --- [http-nio-8081-exec-1] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:34:32.549  INFO 15948 --- [http-nio-8081-exec-1] v.v.m.s.ProducerAndConsumerService       : Message: test send  | requestID: A1 | count: 1
+2021-10-14 16:34:32.555  INFO 15948 --- [http-nio-8081-exec-1] v.v.m.s.ProducerAndConsumerService       : Response: ResponseDto(requestId=A1, messageResponse=Send message: test send  successfully, dateExpired=null)
+2021-10-14 16:34:32.556  INFO 15948 --- [http-nio-8081-exec-1] v.v.m.s.ProducerAndConsumerService       : ========END========
+2021-10-14 16:34:34.937  INFO 15948 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : token: d492235f-e96a-42b8-8ef6-f6570714a9e0
+2021-10-14 16:34:34.948  INFO 15948 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : set: publish to queue B success
+2021-10-14 16:34:34.949  INFO 15948 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : get ttl: 1634204672595
+2021-10-14 16:34:37.814  INFO 15948 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:34:37.815  INFO 15948 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : request: RequestDto(requestId=A2)
+2021-10-14 16:34:37.826 ERROR 15948 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : Error: 
+
+java.lang.NullPointerException: Cannot invoke "String.isEmpty()" because "getSet" is null
+	at vn.vnpay.messageapi.service.ProducerAndConsumerService.checkMessageV2(ProducerAndConsumerService.java:154) ~[classes/:na]
+	at vn.vnpay.messageapi.controller.ProducerAndConsumerController.checkMessageV2(ProducerAndConsumerController.java:37) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+
+2021-10-14 16:35:10.524  INFO 16604 --- [main] v.v.messageapi.MessageApiApplication     : Starting MessageApiApplication using Java 16.0.2 on DESKTOP-VBCFQPR with PID 16604 (F:\VNPAY\message-api\target\classes started by Binnie in F:\VNPAY\message-api)
+2021-10-14 16:35:10.528  INFO 16604 --- [main] v.v.messageapi.MessageApiApplication     : No active profile set, falling back to default profiles: default
+2021-10-14 16:35:12.131  INFO 16604 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-10-14 16:35:12.145  INFO 16604 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-14 16:35:12.145  INFO 16604 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-14 16:35:12.330  INFO 16604 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-14 16:35:12.330  INFO 16604 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1736 ms
+2021-10-14 16:35:13.358  INFO 16604 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-10-14 16:35:13.371  INFO 16604 --- [main] v.v.messageapi.MessageApiApplication     : Started MessageApiApplication in 3.526 seconds (JVM running for 5.628)
+2021-10-14 16:36:22.273  INFO 16604 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-14 16:36:22.274  INFO 16604 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-14 16:36:22.276  INFO 16604 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-10-14 16:36:22.516  INFO 16604 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:36:22.604  INFO 16604 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Message: test send  | requestID: A1 | count: 1
+2021-10-14 16:36:22.609  INFO 16604 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : Response: ResponseDto(requestId=A1, messageResponse=Send message: test send  successfully, dateExpired=null)
+2021-10-14 16:36:22.609  INFO 16604 --- [http-nio-8081-exec-2] v.v.m.s.ProducerAndConsumerService       : ========END========
+2021-10-14 16:36:25.882  INFO 16604 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : token: 2093c487-dba7-4d48-ad41-addffd0d0981
+2021-10-14 16:36:25.894  INFO 16604 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : set: publish to queue B success
+2021-10-14 16:36:25.895  INFO 16604 --- [pool-1-thread-4] v.v.m.s.ProducerAndConsumerService       : get ttl: 1634204783066
+2021-10-14 16:36:28.375  INFO 16604 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:36:28.381  INFO 16604 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : request: RequestDto(requestId=A2)
+2021-10-14 16:36:28.382  INFO 16604 --- [http-nio-8081-exec-4] v.v.m.s.ProducerAndConsumerService       : map queue b check is empty or null
+2021-10-14 16:36:34.968  INFO 16604 --- [http-nio-8081-exec-5] v.v.m.s.ProducerAndConsumerService       : ========BEGIN========
+2021-10-14 16:36:34.969  INFO 16604 --- [http-nio-8081-exec-5] v.v.m.s.ProducerAndConsumerService       : request: RequestDto(requestId=A1)
+2021-10-14 16:36:34.969  INFO 16604 --- [http-nio-8081-exec-5] v.v.m.s.ProducerAndConsumerService       : get ttl: 1634204783057
+2021-10-14 16:36:34.970  INFO 16604 --- [http-nio-8081-exec-5] v.v.m.s.ProducerAndConsumerService       : convert date: 14-10-2021 16:46:23
+2021-10-14 16:36:34.970  INFO 16604 --- [http-nio-8081-exec-5] v.v.m.s.ProducerAndConsumerService       : Response: ResponseDto(requestId=A1, messageResponse=publish to queue B success, dateExpired=14-10-2021 16:46:23)
+2021-10-14 16:36:34.970  INFO 16604 --- [http-nio-8081-exec-5] v.v.m.s.ProducerAndConsumerService       : ========END========
